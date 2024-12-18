@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Desafio Front-End Kognit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Como rodar o projeto.
 
-## Available Scripts
+O projeto foi criado usando o gerenciador de pacotes _yarn_. Para rodar o projeto, em modo de desenvolvimento execute:
+```bash
+# Instalar as dependências do projeto
+yarn
 
-In the project directory, you can run:
+# Executar o projeto em modo de desenvolvimento
+yarn start
+```
 
-### `yarn start`
+Caso queira buildar e rodar o projeto em modo de produção.
+```bash
+# Caso não tenha instalado as dependências
+yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Builda o projeto
+yarn build
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Executa o projeto a partir da build, em modo de produção.
+yarn start
+```
 
-### `yarn test`
+## Telas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tela de Login
 
-### `yarn build`
+Na tela de login, não foi implementado tela de cadastro nem tela de esqueci minha senha.
+Nessa tela foi implementado:
+- Loading ao clicar no botão _login_.
+- Bloqueio dos botões ao logar. Dessa forma impede o usuário de fazer várias requisições enquanto carrega.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tela de Dashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Nessa tela foi implementado apenas o botão das notificações.
+Esse botão ao ser clicado faz a requição para a api solicitada, e armazena o conteúdo da resposta em um estado. Durante o processo em que está realizando a requisição um spinner é apresentado e bloqueia o botão para que não haja excesso de requisições.
+Assim que puxar os conteúdos abre um modal que irá apresentar as notificações.
+O Modal contém um botão para limpar as notificações, que apenas limpa o estado e cada notificação desse modal possui um botão que ao ser clicado, remove a notificação selecionada.
